@@ -24,7 +24,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        backCounter();
 
+
+    }
+
+    private void  backCounter() {
         new CountDownTimer(2000, 1000) {
 
             public void onTick(long millisUntilFinished) {
@@ -34,9 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 showDialog();
             }
         }.start();
-
     }
-
 
 
 
@@ -63,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
+                backCounter();
             }
         });
 
