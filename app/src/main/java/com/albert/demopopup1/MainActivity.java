@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void  backCounter() {
-        new CountDownTimer(2000, 1000) {
+        // Cuenta hasta 3000 milisegundos de 1000 en 1000 milisegundos
+        new CountDownTimer(3000, 1000) {
 
             public void onTick(long millisUntilFinished) {
             }
