@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private void showDialog1() {
         // custom dialog
         dialog = new Dialog(this);
-        dialog.setContentView(R.layout.popup);
+        dialog.setContentView(R.layout.popup1);
 
         // set the custom dialog components - text, image and button
         ImageButton close = (ImageButton) dialog.findViewById(R.id.btnClose);
