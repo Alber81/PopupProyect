@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,13 +17,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        showDialog1();
+
+        showDialog();
     }
 
     Dialog dialog;
 
-    private void showDialog1() {
+    private void showDialog() {
         // custom dialog
+        final Random rGeneratorImg = new Random();
+
+        final Integer[] imagenesID =
+                {R.drawable.bocasecaman, R.drawable.candycrush, R.drawable.chikito,};
+
+        final ImageView iv = (ImageView) findViewById(R.id.popup_image);
+
+        final int resource = imagenesID[rGeneratorImg.nextInt(imagenesID.length)];
+        iv.setImageResource(resource);
+
         dialog = new Dialog(this);
         dialog.setContentView(R.layout.popup1);
 
@@ -41,4 +55,5 @@ public class MainActivity extends AppCompatActivity {
 
         dialog.show();
     }
+
 }
